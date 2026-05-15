@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TalentsRouteImport } from './routes/talents'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -26,6 +27,11 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
 const TalentsRoute = TalentsRouteImport.update({
   id: '/talents',
   path: '/talents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JourneyRoute = JourneyRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/journey': typeof JourneyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/talents': typeof TalentsRoute
   '/testimonials': typeof TestimonialsRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/journey': typeof JourneyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/talents': typeof TalentsRoute
   '/testimonials': typeof TestimonialsRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/journey': typeof JourneyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/talents': typeof TalentsRoute
   '/testimonials': typeof TestimonialsRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/journey'
+    | '/sitemap.xml'
     | '/talents'
     | '/testimonials'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/journey'
+    | '/sitemap.xml'
     | '/talents'
     | '/testimonials'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/journey'
+    | '/sitemap.xml'
     | '/talents'
     | '/testimonials'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   JourneyRoute: typeof JourneyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TalentsRoute: typeof TalentsRoute
   TestimonialsRoute: typeof TestimonialsRoute
 }
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/talents'
       fullPath: '/talents'
       preLoaderRoute: typeof TalentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journey': {
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   JourneyRoute: JourneyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TalentsRoute: TalentsRoute,
   TestimonialsRoute: TestimonialsRoute,
 }
