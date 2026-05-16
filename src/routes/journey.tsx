@@ -44,7 +44,7 @@ function Journey() {
             <p className="text-xs uppercase tracking-[0.4em] text-primary">2012 — present</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-8 font-display text-6xl leading-[0.95] tracking-tight md:text-[9rem]">
+            <h1 className="mt-8 font-display text-4xl sm:text-6xl leading-[0.95] tracking-tight md:text-[9rem]">
               The <span className="font-serif italic">journey</span> so far.
             </h1>
           </Reveal>
@@ -61,7 +61,7 @@ function Journey() {
       <section className="relative px-6 py-32">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <h2 className="font-display text-4xl tracking-tight md:text-6xl">Growth in numbers</h2>
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight md:text-6xl">Growth in numbers</h2>
             <p className="mt-3 text-muted-foreground">A constellation of small, persistent steps.</p>
           </Reveal>
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
@@ -96,7 +96,7 @@ function Timeline() {
             <Reveal key={m.y} delay={i * 0.05}>
               <div className={`relative pl-16 md:grid md:grid-cols-2 md:gap-12 md:pl-0 ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}>
                 <div className={`md:text-${i % 2 ? "left md:pl-12" : "right md:pr-12"}`}>
-                  <p className="font-serif text-7xl italic text-primary md:text-8xl">{m.y}</p>
+                  <p className="font-serif text-5xl sm:text-7xl italic text-primary md:text-8xl">{m.y}</p>
                 </div>
                 <div className={`mt-2 md:mt-6 ${i % 2 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
                   <h3 className="font-display text-2xl tracking-tight md:text-3xl">{m.t}</h3>
@@ -118,7 +118,7 @@ function Graph({ label, values }: { label: string; values: number[] }) {
   return (
     <div className="glass relative overflow-hidden rounded-3xl p-8">
       <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{label}</p>
-      <p className="mt-4 font-display text-5xl tracking-tight">
+      <p className="mt-4 font-display text-3xl sm:text-5xl tracking-tight">
         {values[values.length - 1]}
         {label === "Followers" ? "K+" : ""}
       </p>

@@ -1,18 +1,13 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "outputDirectory": "dist/client",
+  "framework": null,
   "env": {
     "VITE_SSR": "true"
   },
-  "functions": {
-    "api/index.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "rewrites": [
     {
-      "source": "/:path((?!_next/static|favicon\\.ico).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

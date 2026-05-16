@@ -55,7 +55,7 @@ function About() {
             <p className="text-xs uppercase tracking-[0.4em] text-primary">A documentary in five chapters</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-8 font-display text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
+            <h1 className="mt-8 font-display text-4xl sm:text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
               The girl who became
               <br />
               <span className="font-serif italic text-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
@@ -84,7 +84,7 @@ function About() {
         <Reveal>
           <div className="mx-auto max-w-5xl text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Future</p>
-            <h2 className="mt-6 font-serif text-4xl italic leading-[1.05] md:text-7xl">
+            <h2 className="mt-6 font-serif text-3xl sm:text-4xl italic leading-[1.05] md:text-7xl">
               "The story is still being written —
               <br />
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
@@ -116,8 +116,8 @@ function Chapter({ chapter, reverse }: { chapter: typeof chapters[0]; reverse: b
       </Reveal>
       <Reveal y={60} delay={0.1}>
         <div>
-          <p className="font-serif text-6xl italic text-primary/70">{chapter.n}</p>
-          <h3 className="mt-4 font-display text-4xl tracking-tight md:text-6xl">{chapter.title}</h3>
+          <p className="font-serif text-4xl sm:text-6xl italic text-primary/70">{chapter.n}</p>
+          <h3 className="mt-4 font-display text-3xl sm:text-4xl tracking-tight md:text-6xl">{chapter.title}</h3>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{chapter.body}</p>
         </div>
       </Reveal>

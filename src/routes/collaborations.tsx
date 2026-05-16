@@ -48,7 +48,7 @@ function Collabs() {
             <p className="text-xs uppercase tracking-[0.4em] text-primary">For Brands & Partners</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-6 font-display text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
+            <h1 className="mt-6 font-display text-4xl sm:text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
               The <span className="font-serif italic">media kit.</span>
             </h1>
           </Reveal>
@@ -79,7 +79,7 @@ function Collabs() {
       <section className="relative px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <h2 className="font-display text-4xl tracking-tight md:text-6xl">Brand <span className="font-serif italic">collaborations.</span></h2>
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight md:text-6xl">Brand <span className="font-serif italic">collaborations.</span></h2>
           </Reveal>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {brands.map((b, i) => (
@@ -147,7 +147,7 @@ function Collabs() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 overflow-hidden rounded-[2.5rem] border border-white/10 bg-card/50 p-8 md:grid-cols-[1.2fr_1fr] md:p-14">
             <div>
               <p className="text-xs uppercase tracking-[0.4em] text-primary">Media Kit · 2026</p>
-              <h2 className="mt-4 font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
+              <h2 className="mt-4 font-display text-3xl sm:text-4xl leading-[1.05] tracking-tight md:text-6xl">
                 The full deck. <span className="font-serif italic">One PDF.</span>
               </h2>
               <p className="mt-4 max-w-md text-muted-foreground">Collaboration rates, audience analytics, case studies, and everything you need to know about partnering with Tanusiya.</p>

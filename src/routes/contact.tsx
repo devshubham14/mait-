@@ -29,7 +29,7 @@ function Contact() {
             <p className="text-xs uppercase tracking-[0.4em] text-primary">Let's create together</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-6 font-display text-6xl leading-[0.95] tracking-tight md:text-[9rem]">
+            <h1 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl leading-[0.95] tracking-tight md:text-[9rem]">
               Send a <span className="font-serif italic">message.</span>
             </h1>
           </Reveal>
@@ -47,17 +47,17 @@ function Contact() {
           <Reveal>
             <form
               onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-              className="glass relative overflow-hidden rounded-3xl p-8 md:p-10"
+              className="glass relative overflow-hidden rounded-3xl p-6 sm:p-8 md:p-10"
             >
               <div className="ambient-glow pointer-events-none absolute inset-0 opacity-30" />
               <div className="relative">
-                <div className="mb-8 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
+                <div className="mb-8 flex flex-col sm:inline-flex sm:flex-row rounded-2xl sm:rounded-full border border-white/10 bg-white/5 p-1 gap-1">
                   {(["collab", "booking"] as const).map((t) => (
                     <button
                       key={t}
                       type="button"
                       onClick={() => setType(t)}
-                      className={`rounded-full px-5 py-2 text-xs uppercase tracking-[0.2em] transition ${
+                      className={`rounded-xl sm:rounded-full px-3 sm:px-5 py-2 text-[10px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-[0.2em] transition ${
                         type === t ? "bg-gradient-to-r from-primary to-accent text-primary-foreground" : "text-muted-foreground"
                       }`}
                     >
@@ -93,13 +93,13 @@ function Contact() {
             <aside className="space-y-4">
               <div className="glass rounded-3xl p-6">
                 <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Direct line</p>
-                <a href="mailto:hello@tanusiyachoudhury.com" className="mt-3 flex items-center gap-3 font-display text-2xl">
-                  <Mail size={18} className="text-primary" /> hello@tanusiyachoudhury.com
+                <a href="mailto:hello@tanusiyachoudhury.com" className="mt-3 flex items-center gap-2 sm:gap-3 font-display text-sm sm:text-xl lg:text-2xl break-all">
+                  <Mail size={18} className="text-primary shrink-0" /> hello@tanusiyachoudhury.com
                 </a>
               </div>
               <div className="glass rounded-3xl p-6">
                 <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Follow the journey</p>
-                <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
                     { I: Instagram, l: "Instagram", h: "@tanusiyachoudhury" },
                     { I: Youtube, l: "YouTube", h: "@TanusiyaChoudhury" },

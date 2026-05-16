@@ -37,7 +37,7 @@ function Testimonials() {
             <p className="text-xs uppercase tracking-[0.4em] text-primary">In their words</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-6 font-display text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
+            <h1 className="mt-6 font-display text-4xl sm:text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
               <span className="font-serif italic">Voices</span> from the room.
             </h1>
           </Reveal>

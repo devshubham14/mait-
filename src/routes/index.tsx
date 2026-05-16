@@ -75,74 +75,66 @@ function Hero() {
         style={{ opacity }}
         className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:pb-24 md:pt-32 md:justify-center"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[9px] uppercase tracking-[0.15em] backdrop-blur-md sm:mb-4 sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.2em] md:mb-6 md:px-4 md:py-2 md:text-xs md:tracking-[0.3em]"
-        >
-          <Sparkles size={8} className="text-primary sm:size-3 md:size-3" />
-          Premium artist portfolio
-        </motion.p>
-        <h1 className="font-display text-4xl leading-[0.95] tracking-tight sm:text-6xl md:text-[7.5rem] lg:text-[9rem]">
-          {"TANUSIYA".split(" ").map((w, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.1, delay: 0.3 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="mr-1 inline-block sm:mr-2 md:mr-4"
-            >
-              {w}
-            </motion.span>
-          ))}
-          <br />
+        
+        
+        <h1 className="font-display text-5xl leading-[0.95] tracking-tight sm:text-6xl md:text-[7.5rem] lg:text-[9rem]">
+          <motion.span
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="block"
+          >
+            TANUSIYA
+          </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif italic text-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
+            className="block font-serif italic text-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
           >
             CHOUDHURY
           </motion.span>
         </h1>
+        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-2.5 inline-flex w-fit items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[8px] uppercase tracking-[0.1em] backdrop-blur-md sm:mt-3 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-[9px] md:mt-6 md:gap-3 md:px-5 md:py-2 md:text-xs md:tracking-[0.2em]"
+          className="mt-3 inline-flex w-fit max-w-[95vw] flex-wrap items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[9px] uppercase tracking-[0.1em] backdrop-blur-md sm:mt-4 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.2em]"
         >
           Singer • Dancer • Guitarist • Creator
         </motion.p>
+        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="mt-4 max-w-xl text-balance font-serif text-xs italic leading-relaxed text-muted-foreground sm:text-sm md:mt-8 md:text-base lg:text-xl"
+          className="mt-4 max-w-xl text-balance font-serif text-sm italic leading-relaxed text-muted-foreground sm:text-base md:mt-8 lg:text-xl"
         >
           "Turning emotions into melodies, movement, and memories."
         </motion.p>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="mt-4 flex flex-col gap-2 sm:mt-5 sm:flex-row sm:flex-wrap sm:gap-2.5 md:mt-10 md:gap-3"
+          className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:flex-wrap sm:gap-4 md:mt-10"
         >
           <Link
             to="/journey"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-xs sm:text-xs md:text-sm font-medium text-primary-foreground shadow-[0_0_40px_-5px_var(--glow)] transition hover:shadow-[0_0_60px_-5px_var(--glow-pink)] text-center"
+            className="group relative w-full sm:w-auto overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-center text-sm font-medium text-primary-foreground shadow-[0_0_40px_-5px_var(--glow)] transition hover:shadow-[0_0_60px_-5px_var(--glow-pink)]"
           >
             Explore Journey →
           </Link>
           <Link
             to="/talents"
-            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-xs sm:text-xs md:text-sm backdrop-blur-md transition hover:border-primary/50 hover:bg-white/10"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm backdrop-blur-md transition hover:border-primary/50 hover:bg-white/10"
           >
-            <Play size={10} className="sm:size-3 md:size-4" /> Watch Moments
+            <Play size={14} className="shrink-0" /> Watch Moments
           </Link>
           <Link
             to="/contact"
-            className="rounded-full border border-white/10 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-xs sm:text-xs md:text-sm text-muted-foreground transition hover:border-white/30 hover:text-foreground text-center"
+            className="w-full sm:w-auto rounded-full border border-white/10 px-6 py-3 text-center text-sm text-muted-foreground transition hover:border-white/30 hover:text-foreground"
           >
             Work With Me
           </Link>

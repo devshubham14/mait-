@@ -51,7 +51,7 @@ function Gallery() {
             <p className="text-xs uppercase tracking-[0.4em] text-primary">Visual archive</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-6 font-display text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
+            <h1 className="mt-6 font-display text-4xl sm:text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
               The <span className="font-serif italic">gallery.</span>
             </h1>
           </Reveal>

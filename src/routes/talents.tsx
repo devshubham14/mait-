@@ -32,7 +32,7 @@ function Talents() {
             <p className="text-xs uppercase tracking-[0.4em] text-primary">Three disciplines, one voice</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-8 font-display text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
+            <h1 className="mt-8 font-display text-4xl sm:text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
               The <span className="font-serif italic">craft.</span>
             </h1>
           </Reveal>
@@ -70,7 +70,7 @@ function Talents() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-12">
               <p className="text-xs uppercase tracking-[0.3em] text-primary">— Performances</p>
-              <h2 className="mt-3 font-display text-5xl leading-[1] tracking-tight md:text-7xl">Live, in the room with you.</h2>
+              <h2 className="mt-3 font-display text-3xl sm:text-5xl leading-[1] tracking-tight md:text-7xl">Live, in the room with you.</h2>
               <p className="mt-4 max-w-xl text-muted-foreground">120+ shows across intimate venues, festivals, and brand activations.</p>
             </div>
           </div>
@@ -112,7 +112,7 @@ function TalentSection({
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-primary">
               {icon} {eyebrow}
             </div>
-            <h2 className="mt-6 font-display text-5xl leading-[1.05] tracking-tight md:text-7xl">
+            <h2 className="mt-6 font-display text-3xl sm:text-5xl leading-[1.05] tracking-tight md:text-7xl">
               {title.split(" ").slice(0, -1).join(" ")} <span className="font-serif italic">{title.split(" ").slice(-1)}</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{body}</p>
