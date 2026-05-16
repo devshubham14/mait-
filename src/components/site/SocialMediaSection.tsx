@@ -54,7 +54,7 @@ export function SocialMediaSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };
@@ -92,15 +92,16 @@ export function SocialMediaSection() {
 
       <div className="mx-auto max-w-7xl relative z-10">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">— Connect With Me</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            — Connect With Me
+          </p>
           <h2 className="mt-4 max-w-4xl font-display text-4xl sm:text-5xl leading-[1.05] tracking-tight md:text-6xl">
             Follow the{" "}
-            <span className="font-serif italic text-muted-foreground/70">
-              creative journey.
-            </span>
+            <span className="font-serif italic text-muted-foreground/70">creative journey.</span>
           </h2>
           <p className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Connect across platforms to stay updated with performances, vlogs, behind-the-scenes content, and creative collaborations.
+            Connect across platforms to stay updated with performances, vlogs, behind-the-scenes
+            content, and creative collaborations.
           </p>
         </Reveal>
 
@@ -114,11 +115,7 @@ export function SocialMediaSection() {
           {platforms.map((platform, i) => {
             const Icon = platform.icon;
             return (
-              <motion.div
-                key={platform.name}
-                variants={itemVariants}
-                className="group relative"
-              >
+              <motion.div key={platform.name} variants={itemVariants} className="group relative">
                 <a
                   href={platform.url}
                   target="_blank"
@@ -128,7 +125,9 @@ export function SocialMediaSection() {
                   <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 to-white/3 p-8 backdrop-blur-md transition-all duration-500 hover:border-white/30 hover:bg-white/12 cursor-pointer">
                     {/* Animated gradient background on hover */}
                     <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-5`} />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-5`}
+                      />
                     </div>
 
                     {/* Content */}

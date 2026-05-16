@@ -19,7 +19,11 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery — Tanusiya Choudhury" },
-      { name: "description", content: "A cinematic gallery of performances, backstage moments, studio sessions, and lifestyle imagery from Tanusiya Choudhury's artistic journey." },
+      {
+        name: "description",
+        content:
+          "A cinematic gallery of performances, backstage moments, studio sessions, and lifestyle imagery from Tanusiya Choudhury's artistic journey.",
+      },
       { property: "og:title", content: "Gallery — Tanusiya Choudhury" },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
@@ -37,7 +41,15 @@ const items = [
   { src: portraitImg, cat: "Lifestyle", a: "tall" },
   { src: childhoodImg, cat: "Lifestyle", a: "tall" },
 ];
-const categories = ["All", "Performances", "Dance", "Guitar Sessions", "Studio Moments", "Backstage", "Lifestyle"];
+const categories = [
+  "All",
+  "Performances",
+  "Dance",
+  "Guitar Sessions",
+  "Studio Moments",
+  "Backstage",
+  "Lifestyle",
+];
 
 function Gallery() {
   const [filter, setFilter] = useState("All");
@@ -115,7 +127,11 @@ function Gallery() {
               alt=""
               className="max-h-[90vh] max-w-[90vw] rounded-2xl object-contain shadow-[0_0_120px_-20px_var(--glow)]"
             />
-            <button onClick={() => setOpen(null)} aria-label="Close" className="absolute right-6 top-6 grid h-12 w-12 place-items-center rounded-full border border-white/10 bg-white/5">
+            <button
+              onClick={() => setOpen(null)}
+              aria-label="Close"
+              className="absolute right-6 top-6 grid h-12 w-12 place-items-center rounded-full border border-white/10 bg-white/5"
+            >
               <X size={18} />
             </button>
           </motion.div>

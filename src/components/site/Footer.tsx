@@ -25,10 +25,26 @@ export function Footer() {
           <div>
             <p className="mb-4 text-xs uppercase tracking-widest text-muted-foreground">Explore</p>
             <ul className="flex flex-col gap-2 text-sm">
-              <li><Link to="/about" className="hover:text-primary">About</Link></li>
-              <li><Link to="/journey" className="hover:text-primary">Journey</Link></li>
-              <li><Link to="/talents" className="hover:text-primary">Talents</Link></li>
-              <li><Link to="/gallery" className="hover:text-primary">Gallery</Link></li>
+              <li>
+                <Link to="/about" className="hover:text-primary">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/journey" className="hover:text-primary">
+                  Journey
+                </Link>
+              </li>
+              <li>
+                <Link to="/talents" className="hover:text-primary">
+                  Talents
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="hover:text-primary">
+                  Gallery
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

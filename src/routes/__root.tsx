@@ -43,7 +43,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <h1 className="font-display text-2xl">Something flickered.</h1>
         <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
         <button
-          onClick={() => { router.invalidate(); reset(); }}
+          onClick={() => {
+            router.invalidate();
+            reset();
+          }}
           className="mt-6 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm hover:border-primary/50"
         >
           Try again
@@ -65,7 +68,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Tanusiya Choudhury - Official artist portfolio. Singer, dancer, guitarist, performer, and content creator. State Level Orchestra Winner.",
       },
       { property: "og:title", content: "Tanusiya Choudhury — Premium Artist Portfolio" },
-      { property: "og:description", content: "Turning emotions into melodies, movement, and memories." },
+      {
+        property: "og:description",
+        content: "Turning emotions into melodies, movement, and memories.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Tanusiya Choudhury" },
       { name: "twitter:card", content: "summary_large_image" },

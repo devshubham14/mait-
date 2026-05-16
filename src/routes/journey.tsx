@@ -10,7 +10,11 @@ export const Route = createFileRoute("/journey")({
   head: () => ({
     meta: [
       { title: "Journey — Luna Aria" },
-      { name: "description", content: "An interactive cinematic timeline of Luna Aria's journey from her first dance class to a growing artist identity." },
+      {
+        name: "description",
+        content:
+          "An interactive cinematic timeline of Luna Aria's journey from her first dance class to a growing artist identity.",
+      },
       { property: "og:title", content: "The Journey of Luna Aria" },
     ],
     links: [{ rel: "canonical", href: "/journey" }],
@@ -18,14 +22,46 @@ export const Route = createFileRoute("/journey")({
 });
 
 const milestones = [
-  { y: "2012", t: "First dance class", d: "A studio with mirrors, ribbons of light, a child who refused to leave." },
-  { y: "2015", t: "Started singing", d: "Sang into a hairbrush. Then a karaoke mic. Then everything changed." },
-  { y: "2017", t: "Learned guitar", d: "Six strings, blistered fingers, a song written in one rainy afternoon." },
-  { y: "2019", t: "First stage performance", d: "A school auditorium. Three hundred faces. One unforgettable trembling note." },
-  { y: "2021", t: "Started social media", d: "Began sharing covers from a bedroom drenched in fairy lights." },
-  { y: "2023", t: "First viral content", d: "A 47-second clip. Two million hearts. The world finally tuned in." },
-  { y: "2025", t: "First paid collaboration", d: "Featured artist for a global fashion house — and many more after." },
-  { y: "2026", t: "Growing artist identity", d: "Touring intimate venues. Writing the debut record. The chapter ahead." },
+  {
+    y: "2012",
+    t: "First dance class",
+    d: "A studio with mirrors, ribbons of light, a child who refused to leave.",
+  },
+  {
+    y: "2015",
+    t: "Started singing",
+    d: "Sang into a hairbrush. Then a karaoke mic. Then everything changed.",
+  },
+  {
+    y: "2017",
+    t: "Learned guitar",
+    d: "Six strings, blistered fingers, a song written in one rainy afternoon.",
+  },
+  {
+    y: "2019",
+    t: "First stage performance",
+    d: "A school auditorium. Three hundred faces. One unforgettable trembling note.",
+  },
+  {
+    y: "2021",
+    t: "Started social media",
+    d: "Began sharing covers from a bedroom drenched in fairy lights.",
+  },
+  {
+    y: "2023",
+    t: "First viral content",
+    d: "A 47-second clip. Two million hearts. The world finally tuned in.",
+  },
+  {
+    y: "2025",
+    t: "First paid collaboration",
+    d: "Featured artist for a global fashion house — and many more after.",
+  },
+  {
+    y: "2026",
+    t: "Growing artist identity",
+    d: "Touring intimate venues. Writing the debut record. The chapter ahead.",
+  },
 ];
 
 const stats = [
@@ -61,8 +97,12 @@ function Journey() {
       <section className="relative px-6 py-32">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight md:text-6xl">Growth in numbers</h2>
-            <p className="mt-3 text-muted-foreground">A constellation of small, persistent steps.</p>
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight md:text-6xl">
+              Growth in numbers
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              A constellation of small, persistent steps.
+            </p>
           </Reveal>
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
             {stats.map((s, i) => (
@@ -94,9 +134,13 @@ function Timeline() {
         <div className="space-y-24">
           {milestones.map((m, i) => (
             <Reveal key={m.y} delay={i * 0.05}>
-              <div className={`relative pl-16 md:grid md:grid-cols-2 md:gap-12 md:pl-0 ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}>
+              <div
+                className={`relative pl-16 md:grid md:grid-cols-2 md:gap-12 md:pl-0 ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}
+              >
                 <div className={`md:text-${i % 2 ? "left md:pl-12" : "right md:pr-12"}`}>
-                  <p className="font-serif text-5xl sm:text-7xl italic text-primary md:text-8xl">{m.y}</p>
+                  <p className="font-serif text-5xl sm:text-7xl italic text-primary md:text-8xl">
+                    {m.y}
+                  </p>
                 </div>
                 <div className={`mt-2 md:mt-6 ${i % 2 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
                   <h3 className="font-display text-2xl tracking-tight md:text-3xl">{m.t}</h3>
@@ -114,7 +158,9 @@ function Timeline() {
 
 function Graph({ label, values }: { label: string; values: number[] }) {
   const max = Math.max(...values);
-  const points = values.map((v, i) => `${(i / (values.length - 1)) * 100},${100 - (v / max) * 90}`).join(" ");
+  const points = values
+    .map((v, i) => `${(i / (values.length - 1)) * 100},${100 - (v / max) * 90}`)
+    .join(" ");
   return (
     <div className="glass relative overflow-hidden rounded-3xl p-8">
       <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{label}</p>
@@ -143,7 +189,11 @@ function Graph({ label, values }: { label: string; values: number[] }) {
         <polygon fill={`url(#g-${label})`} points={`0,100 ${points} 100,100`} />
       </svg>
       <div className="mt-2 flex justify-between text-[10px] text-muted-foreground">
-        <span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span>
+        <span>2021</span>
+        <span>2022</span>
+        <span>2023</span>
+        <span>2024</span>
+        <span>2025</span>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ export function NowPlayingWidget() {
       transition={{ duration: 0.6, delay: 0.2 }}
       whileHover={{ y: -5 }}
     >
-      <div className="group relative overflow-hidden rounded-lg sm:rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-3 sm:p-4 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)]"> 
+      <div className="group relative overflow-hidden rounded-lg sm:rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-3 sm:p-4 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
         {/* Animated background gradient */}
         <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10 blur-xl" />
@@ -50,9 +50,7 @@ export function NowPlayingWidget() {
           </div>
 
           {/* Pulse animation indicator */}
-          <motion.div
-            className="mt-3 h-1 w-full overflow-hidden rounded-full bg-white/5"
-          >
+          <motion.div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-white/5">
             <motion.div
               className="h-full bg-gradient-to-r from-purple-400 to-pink-400"
               animate={{ x: ["0%", "100%", "0%"] }}

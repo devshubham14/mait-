@@ -189,9 +189,7 @@ export function CinematicTimeline() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Sparkles size={16} className="text-purple-400" />
-                <p className="text-sm text-muted-foreground">
-                  The journey continues...
-                </p>
+                <p className="text-sm text-muted-foreground">The journey continues...</p>
               </motion.div>
             </motion.div>
           </Reveal>

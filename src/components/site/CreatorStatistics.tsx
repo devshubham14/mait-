@@ -38,7 +38,10 @@ function AnimatedCounter({ end, suffix = "" }: { end: number; suffix?: string })
   }, [inView, end]);
 
   return (
-    <p ref={ref} className="bg-gradient-to-br from-purple-400 via-pink-400 to-purple-500 bg-clip-text font-display text-5xl md:text-6xl text-transparent">
+    <p
+      ref={ref}
+      className="bg-gradient-to-br from-purple-400 via-pink-400 to-purple-500 bg-clip-text font-display text-5xl md:text-6xl text-transparent"
+    >
       {count}
       {suffix}
     </p>
@@ -96,7 +99,9 @@ export function CreatorStatistics() {
 
       <div className="mx-auto max-w-7xl relative z-10">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">— By The Numbers</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            — By The Numbers
+          </p>
           <h2 className="mt-4 max-w-4xl font-display text-4xl sm:text-5xl leading-[1.05] tracking-tight md:text-6xl">
             A creator{" "}
             <span className="font-serif italic text-muted-foreground/70">built on connection.</span>
@@ -193,7 +198,8 @@ export function CreatorStatistics() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              "Every number represents a connection, a moment shared, a story resonated. Thank you for being part of this journey."
+              "Every number represents a connection, a moment shared, a story resonated. Thank you
+              for being part of this journey."
             </motion.p>
           </motion.div>
         </Reveal>

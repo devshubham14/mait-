@@ -9,7 +9,11 @@ export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
       { title: "Voices — Testimonials of Tanusiya Choudhury" },
-      { name: "description", content: "What audiences, brands, and collaborators say about Tanusiya Choudhury's artistry and performances." },
+      {
+        name: "description",
+        content:
+          "What audiences, brands, and collaborators say about Tanusiya Choudhury's artistry and performances.",
+      },
       { property: "og:title", content: "Voices — Tanusiya Choudhury" },
     ],
     links: [{ rel: "canonical", href: "/testimonials" }],
@@ -17,14 +21,46 @@ export const Route = createFileRoute("/testimonials")({
 });
 
 const quotes = [
-  { q: "Tanusiya's performances are a masterclass in vulnerability. The audience doesn't just watch — they feel.", a: "Event Curator, Mumbai Performing Arts", r: "Brand" },
-  { q: "Her ability to seamlessly blend dancing, singing, and guitar-playing in a single performance is rare. She's a complete artist.", a: "Music Producer, Echo Studios", r: "Collab" },
-  { q: "Watched her cover and had to sit down. The guitar work, the vocals, the authenticity. Absolute magic.", a: "Rahul, listener from Delhi", r: "Fan" },
-  { q: "She doesn't perform FOR the camera. She performs WITH the camera. That's what made our campaign so powerful.", a: "Creative Director, Velvet Fashion", r: "Brand" },
-  { q: "Tanusiya brings a professionalism that's rare for her age. Prepared, collaborative, authentic. A dream to work with.", a: "Festival Organizer, Indie Nights", r: "Collab" },
-  { q: "Your song helped me through my toughest year. The fact that you created it in your bedroom makes it even more special.", a: "Priya, listener from Bangalore", r: "Fan" },
-  { q: "The engagement rates on her content are phenomenal, but what's more important is the loyalty. Her audience trusts her completely.", a: "Digital Marketing, Zenith Brands", r: "Brand" },
-  { q: "Working with Tanusiya on our latest campaign was effortless. She understood our vision immediately and elevated it.", a: "Campaign Manager, Aurora Tech", r: "Collab" },
+  {
+    q: "Tanusiya's performances are a masterclass in vulnerability. The audience doesn't just watch — they feel.",
+    a: "Event Curator, Mumbai Performing Arts",
+    r: "Brand",
+  },
+  {
+    q: "Her ability to seamlessly blend dancing, singing, and guitar-playing in a single performance is rare. She's a complete artist.",
+    a: "Music Producer, Echo Studios",
+    r: "Collab",
+  },
+  {
+    q: "Watched her cover and had to sit down. The guitar work, the vocals, the authenticity. Absolute magic.",
+    a: "Rahul, listener from Delhi",
+    r: "Fan",
+  },
+  {
+    q: "She doesn't perform FOR the camera. She performs WITH the camera. That's what made our campaign so powerful.",
+    a: "Creative Director, Velvet Fashion",
+    r: "Brand",
+  },
+  {
+    q: "Tanusiya brings a professionalism that's rare for her age. Prepared, collaborative, authentic. A dream to work with.",
+    a: "Festival Organizer, Indie Nights",
+    r: "Collab",
+  },
+  {
+    q: "Your song helped me through my toughest year. The fact that you created it in your bedroom makes it even more special.",
+    a: "Priya, listener from Bangalore",
+    r: "Fan",
+  },
+  {
+    q: "The engagement rates on her content are phenomenal, but what's more important is the loyalty. Her audience trusts her completely.",
+    a: "Digital Marketing, Zenith Brands",
+    r: "Brand",
+  },
+  {
+    q: "Working with Tanusiya on our latest campaign was effortless. She understood our vision immediately and elevated it.",
+    a: "Campaign Manager, Aurora Tech",
+    r: "Collab",
+  },
 ];
 
 function Testimonials() {
@@ -49,7 +85,8 @@ function Testimonials() {
         <div className="flex animate-marquee whitespace-nowrap gap-16 [animation-duration:60s]">
           {[...quotes, ...quotes].map((t, i) => (
             <span key={i} className="font-serif text-2xl italic text-muted-foreground">
-              "{t.q.split(".")[0]}." <span className="ml-3 not-italic text-primary/70">— {t.a}</span>
+              "{t.q.split(".")[0]}."{" "}
+              <span className="ml-3 not-italic text-primary/70">— {t.a}</span>
             </span>
           ))}
         </div>
@@ -66,10 +103,14 @@ function Testimonials() {
                 <div className="ambient-glow pointer-events-none absolute inset-0 opacity-0 transition-opacity group-hover:opacity-40" />
                 <div className="relative">
                   <Quote size={28} className="text-primary/60" />
-                  <p className="mt-5 font-serif text-lg italic leading-relaxed text-foreground">"{t.q}"</p>
+                  <p className="mt-5 font-serif text-lg italic leading-relaxed text-foreground">
+                    "{t.q}"
+                  </p>
                   <div className="mt-6 flex items-center justify-between border-t border-white/5 pt-5">
                     <p className="text-sm text-muted-foreground">{t.a}</p>
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-primary/80">{t.r}</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-primary/80">
+                      {t.r}
+                    </span>
                   </div>
                 </div>
               </article>

@@ -60,7 +60,7 @@ export function LittleThingsAboutMe() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };
@@ -85,7 +85,9 @@ export function LittleThingsAboutMe() {
 
       <div className="mx-auto max-w-7xl relative z-10">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">— Personal Notes</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            — Personal Notes
+          </p>
           <h2 className="mt-4 max-w-4xl font-display text-4xl sm:text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
             Little things{" "}
             <span className="font-serif italic text-muted-foreground/70">that say everything.</span>
@@ -102,15 +104,13 @@ export function LittleThingsAboutMe() {
           {things.map((thing, i) => {
             const Icon = thing.icon;
             return (
-              <motion.div
-                key={thing.title}
-                variants={itemVariants}
-                className="group relative"
-              >
+              <motion.div key={thing.title} variants={itemVariants} className="group relative">
                 <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 to-white/3 p-8 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:bg-white/12">
                   {/* Gradient background on hover */}
                   <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${thing.color} opacity-5`} />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${thing.color} opacity-5`}
+                    />
                   </div>
 
                   {/* Content */}

@@ -15,7 +15,10 @@ export const Route = createFileRoute("/talents")({
   head: () => ({
     meta: [
       { title: "Talents — Luna Aria" },
-      { name: "description", content: "Dance, singing, and guitar — three disciplines, one cinematic voice." },
+      {
+        name: "description",
+        content: "Dance, singing, and guitar — three disciplines, one cinematic voice.",
+      },
       { property: "og:title", content: "The Talents of Luna Aria" },
     ],
     links: [{ rel: "canonical", href: "/talents" }],
@@ -29,7 +32,9 @@ function Talents() {
         <Particles count={20} />
         <div className="mx-auto max-w-6xl text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-primary">Three disciplines, one voice</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-primary">
+              Three disciplines, one voice
+            </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 font-display text-4xl sm:text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
@@ -66,12 +71,21 @@ function Talents() {
       <section className="relative px-6 py-32">
         <Reveal>
           <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-white/10">
-            <img src={stageImg} alt="Live performance" loading="lazy" className="h-[60vh] w-full object-cover" />
+            <img
+              src={stageImg}
+              alt="Live performance"
+              loading="lazy"
+              className="h-[60vh] w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-12">
               <p className="text-xs uppercase tracking-[0.3em] text-primary">— Performances</p>
-              <h2 className="mt-3 font-display text-3xl sm:text-5xl leading-[1] tracking-tight md:text-7xl">Live, in the room with you.</h2>
-              <p className="mt-4 max-w-xl text-muted-foreground">120+ shows across intimate venues, festivals, and brand activations.</p>
+              <h2 className="mt-3 font-display text-3xl sm:text-5xl leading-[1] tracking-tight md:text-7xl">
+                Live, in the room with you.
+              </h2>
+              <p className="mt-4 max-w-xl text-muted-foreground">
+                120+ shows across intimate venues, festivals, and brand activations.
+              </p>
             </div>
           </div>
         </Reveal>
@@ -79,7 +93,12 @@ function Talents() {
           <div className="mx-auto mt-12 grid max-w-7xl gap-4 sm:grid-cols-2 md:grid-cols-4">
             {[stageImg, studioImg, danceImg, singImg].map((src, i) => (
               <div key={i} className="group relative aspect-square overflow-hidden rounded-2xl">
-                <img src={src} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img
+                  src={src}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60 transition-opacity group-hover:opacity-30" />
               </div>
             ))}
@@ -91,18 +110,38 @@ function Talents() {
 }
 
 function TalentSection({
-  icon, eyebrow, title, body, img, reverse, audio,
+  icon,
+  eyebrow,
+  title,
+  body,
+  img,
+  reverse,
+  audio,
 }: {
-  icon: React.ReactNode; eyebrow: string; title: string; body: string; img: string; reverse?: boolean; audio?: boolean;
+  icon: React.ReactNode;
+  eyebrow: string;
+  title: string;
+  body: string;
+  img: string;
+  reverse?: boolean;
+  audio?: boolean;
 }) {
   return (
     <section className="relative px-6 py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-20">
         <Reveal y={60} className={reverse ? "md:order-2" : ""}>
           <div className="group relative overflow-hidden rounded-3xl border border-white/10">
-            <img src={img} alt={title} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+            <img
+              src={img}
+              alt={title}
+              loading="lazy"
+              className="aspect-[4/5] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-            <button aria-label="Play" className="absolute bottom-6 right-6 grid h-14 w-14 place-items-center rounded-full bg-white/10 backdrop-blur-md transition hover:bg-primary/40">
+            <button
+              aria-label="Play"
+              className="absolute bottom-6 right-6 grid h-14 w-14 place-items-center rounded-full bg-white/10 backdrop-blur-md transition hover:bg-primary/40"
+            >
               <Play size={18} fill="currentColor" />
             </button>
           </div>
@@ -113,7 +152,8 @@ function TalentSection({
               {icon} {eyebrow}
             </div>
             <h2 className="mt-6 font-display text-3xl sm:text-5xl leading-[1.05] tracking-tight md:text-7xl">
-              {title.split(" ").slice(0, -1).join(" ")} <span className="font-serif italic">{title.split(" ").slice(-1)}</span>
+              {title.split(" ").slice(0, -1).join(" ")}{" "}
+              <span className="font-serif italic">{title.split(" ").slice(-1)}</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{body}</p>
             {audio && <AudioWave />}

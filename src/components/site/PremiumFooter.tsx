@@ -132,7 +132,10 @@ export function PremiumFooter() {
                     whileTap={{ scale: 0.9 }}
                   >
                     <div className="rounded-full border border-white/10 bg-white/5 p-2.5 sm:p-3 transition-all duration-300 hover:border-purple-500/50 hover:bg-white/10 backdrop-blur-sm">
-                      <Icon size={18} className="sm:w-5 sm:h-5 text-muted-foreground group-hover:text-purple-400 transition" />
+                      <Icon
+                        size={18}
+                        className="sm:w-5 sm:h-5 text-muted-foreground group-hover:text-purple-400 transition"
+                      />
                     </div>
 
                     {/* Hover glow */}

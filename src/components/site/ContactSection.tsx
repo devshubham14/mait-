@@ -82,12 +82,11 @@ export function ContactSection() {
           </p>
           <h2 className="mt-4 max-w-3xl mx-auto font-display text-4xl sm:text-5xl leading-[1.05] tracking-tight text-center md:text-6xl">
             Ready for{" "}
-            <span className="font-serif italic text-muted-foreground/70">
-              collaboration?
-            </span>
+            <span className="font-serif italic text-muted-foreground/70">collaboration?</span>
           </h2>
           <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-center text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Whether it's a brand partnership, performance opportunity, or just to say hello — I'd love to hear from you.
+            Whether it's a brand partnership, performance opportunity, or just to say hello — I'd
+            love to hear from you.
           </p>
         </Reveal>
 
@@ -132,9 +131,7 @@ export function ContactSection() {
                     <p className="mt-2 font-mono text-sm text-purple-400 break-all">
                       {method.value}
                     </p>
-                    <p className="mt-2 text-xs text-muted-foreground">
-                      {method.description}
-                    </p>
+                    <p className="mt-2 text-xs text-muted-foreground">{method.description}</p>
                   </div>
                 </div>
               </motion.a>

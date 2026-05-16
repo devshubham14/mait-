@@ -9,7 +9,11 @@ export const Route = createFileRoute("/collaborations")({
   head: () => ({
     meta: [
       { title: "Collaborations & Media Kit — Tanusiya Choudhury" },
-      { name: "description", content: "Brand collaborations, audience analytics, and the media kit for creator and performer Tanusiya Choudhury." },
+      {
+        name: "description",
+        content:
+          "Brand collaborations, audience analytics, and the media kit for creator and performer Tanusiya Choudhury.",
+      },
       { property: "og:title", content: "Work with Tanusiya Choudhury" },
     ],
     links: [{ rel: "canonical", href: "/collaborations" }],
@@ -54,8 +58,9 @@ function Collabs() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-              A growing community of creative, discerning listeners who connect deeply with authentic artistry.
-              Below — the brands we've partnered with, the metrics, and what makes collaboration special.
+              A growing community of creative, discerning listeners who connect deeply with
+              authentic artistry. Below — the brands we've partnered with, the metrics, and what
+              makes collaboration special.
             </p>
           </Reveal>
         </div>
@@ -67,8 +72,12 @@ function Collabs() {
           {reach.map((r, i) => (
             <Reveal key={r.l} delay={i * 0.06}>
               <div className="bg-background/80 p-8">
-                <p className="bg-gradient-to-br from-primary to-accent bg-clip-text font-display text-4xl text-transparent md:text-5xl">{r.v}</p>
-                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">{r.l}</p>
+                <p className="bg-gradient-to-br from-primary to-accent bg-clip-text font-display text-4xl text-transparent md:text-5xl">
+                  {r.v}
+                </p>
+                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  {r.l}
+                </p>
               </div>
             </Reveal>
           ))}
@@ -79,7 +88,9 @@ function Collabs() {
       <section className="relative px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight md:text-6xl">Brand <span className="font-serif italic">collaborations.</span></h2>
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight md:text-6xl">
+              Brand <span className="font-serif italic">collaborations.</span>
+            </h2>
           </Reveal>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {brands.map((b, i) => (
@@ -100,13 +111,16 @@ function Collabs() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
           <Reveal>
             <div className="glass rounded-3xl p-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Audience demographics</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Audience demographics
+              </p>
               <h3 className="mt-4 font-display text-3xl">Who's tuning in.</h3>
               <div className="mt-8 space-y-5">
                 {demographics.map((d) => (
                   <div key={d.l}>
                     <div className="mb-2 flex justify-between text-sm">
-                      <span>{d.l}</span><span className="text-muted-foreground">{d.v}%</span>
+                      <span>{d.l}</span>
+                      <span className="text-muted-foreground">{d.v}%</span>
                     </div>
                     <div className="h-1.5 overflow-hidden rounded-full bg-white/5">
                       <div
@@ -123,7 +137,11 @@ function Collabs() {
             <div className="grid h-full gap-6">
               {[
                 { I: Heart, t: "Audience trust", d: "Comments read like letters." },
-                { I: Sparkles, t: "Authentic storytelling", d: "Every campaign feels like a film." },
+                {
+                  I: Sparkles,
+                  t: "Authentic storytelling",
+                  d: "Every campaign feels like a film.",
+                },
                 { I: Users, t: "Engagement", d: "8.4% — three times the industry average." },
               ].map(({ I, t, d }) => (
                 <div key={t} className="glass flex gap-4 rounded-2xl p-6">
@@ -150,12 +168,23 @@ function Collabs() {
               <h2 className="mt-4 font-display text-3xl sm:text-4xl leading-[1.05] tracking-tight md:text-6xl">
                 The full deck. <span className="font-serif italic">One PDF.</span>
               </h2>
-              <p className="mt-4 max-w-md text-muted-foreground">Collaboration rates, audience analytics, case studies, and everything you need to know about partnering with Tanusiya.</p>
+              <p className="mt-4 max-w-md text-muted-foreground">
+                Collaboration rates, audience analytics, case studies, and everything you need to
+                know about partnering with Tanusiya.
+              </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-medium text-primary-foreground">
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-medium text-primary-foreground"
+                >
                   <Download size={14} /> Download media kit
                 </a>
-                <a href="/contact" className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm hover:border-primary/50">Pitch a campaign</a>
+                <a
+                  href="/contact"
+                  className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm hover:border-primary/50"
+                >
+                  Pitch a campaign
+                </a>
               </div>
             </div>
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">

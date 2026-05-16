@@ -17,7 +17,7 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
@@ -53,15 +53,15 @@ export function Nav() {
             <span className="relative inline-block font-display text-lg font-bold tracking-tight">
               {/* Glow background */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-30 rounded-full" />
-              
+
               {/* Main text */}
               <span className="relative bg-gradient-to-r from-purple-300 via-white to-pink-300 bg-clip-text text-transparent">
                 TANUSIYA
               </span>
-              
+
               {/* Divider */}
               <span className="mx-2 text-xs text-purple-400/60">•</span>
-              
+
               {/* Subtitle */}
               <span className="relative text-xs font-light text-gray-300 tracking-[0.15em] uppercase">
                 Artist
@@ -82,7 +82,7 @@ export function Nav() {
               >
                 {l.label}
                 {/* Animated underline */}
-                <motion.span 
+                <motion.span
                   className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"
                   initial={{ width: 0 }}
                   whileHover={{ width: "100%" }}
@@ -105,14 +105,15 @@ export function Nav() {
           >
             {/* Hover glow */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl" />
-            
+
             <span className="relative">Work with me</span>
-            
+
             {/* Animated gradient border */}
             <motion.div
               className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
-                background: "linear-gradient(90deg, transparent, rgba(168,85,247,0.3), transparent)",
+                background:
+                  "linear-gradient(90deg, transparent, rgba(168,85,247,0.3), transparent)",
               }}
             />
           </Link>
