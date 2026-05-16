@@ -139,16 +139,16 @@
 
 @utility film-grain {
   position: relative;
-}
-@utility film-grain::after {
-  content: "";
-  position: absolute;
-  inset: -100%;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-  opacity: 0.08;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  animation: var(--animate-grain);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -100%;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+    opacity: 0.08;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    animation: var(--animate-grain);
+  }
 }
 
 @layer base {

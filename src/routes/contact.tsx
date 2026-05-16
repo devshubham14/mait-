@@ -9,9 +9,9 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
   head: () => ({
     meta: [
-      { title: "Contact — Luna Aria" },
-      { name: "description", content: "Inquire about collaborations, booking and press for Luna Aria." },
-      { property: "og:title", content: "Contact Luna Aria" },
+      { title: "Contact — Tanusiya Choudhury" },
+      { name: "description", content: "Inquire about collaborations, performances, and media opportunities with Tanusiya Choudhury." },
+      { property: "og:title", content: "Contact Tanusiya Choudhury" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
   }),
@@ -26,16 +26,17 @@ function Contact() {
         <Particles count={35} />
         <div className="mx-auto max-w-6xl text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-primary">Let's talk</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-primary">Let's create together</p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-6 font-display text-6xl leading-[0.95] tracking-tight md:text-[9rem]">
-              Send a <span className="font-serif italic">letter.</span>
+              Send a <span className="font-serif italic">message.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-              Brand briefs, bookings, or simply hello. Every message is read with care.
+              Collaboration inquiries, performance bookings, brand partnerships, or just to say hello.
+              Every message is read and responded to with care.
             </p>
           </Reveal>
         </div>
@@ -92,18 +93,18 @@ function Contact() {
             <aside className="space-y-4">
               <div className="glass rounded-3xl p-6">
                 <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Direct line</p>
-                <a href="mailto:hello@lunaaria.com" className="mt-3 flex items-center gap-3 font-display text-2xl">
-                  <Mail size={18} className="text-primary" /> hello@lunaaria.com
+                <a href="mailto:hello@tanusiyachoudhury.com" className="mt-3 flex items-center gap-3 font-display text-2xl">
+                  <Mail size={18} className="text-primary" /> hello@tanusiyachoudhury.com
                 </a>
               </div>
               <div className="glass rounded-3xl p-6">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Find me</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Follow the journey</p>
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   {[
-                    { I: Instagram, l: "Instagram", h: "@lunaaria" },
-                    { I: Youtube, l: "YouTube", h: "/lunaaria" },
-                    { I: Music2, l: "Spotify", h: "Luna Aria" },
-                    { I: Music2, l: "TikTok", h: "@luna.aria" },
+                    { I: Instagram, l: "Instagram", h: "@tanusiyachoudhury" },
+                    { I: Youtube, l: "YouTube", h: "@TanusiyaChoudhury" },
+                    { I: Music2, l: "Spotify", h: "Tanusiya Choudhury" },
+                    { I: Music2, l: "TikTok", h: "@tanusiyac" },
                   ].map(({ I, l, h }) => (
                     <a key={l} href="#" className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 p-4 transition hover:border-primary/40 hover:bg-primary/10">
                       <I size={16} className="text-primary" />
@@ -116,7 +117,7 @@ function Contact() {
                 </div>
               </div>
               <div className="glass rounded-3xl p-6">
-                <p className="font-serif text-xl italic leading-relaxed">"The right project always begins with a real conversation."</p>
+                <p className="font-serif text-xl italic leading-relaxed">"Every great collaboration starts with a conversation and a shared vision."</p>
               </div>
             </aside>
           </Reveal>

@@ -8,23 +8,23 @@ export const Route = createFileRoute("/testimonials")({
   component: Testimonials,
   head: () => ({
     meta: [
-      { title: "Voices — Testimonials of Luna Aria" },
-      { name: "description", content: "What audiences, brands and collaborators say about working with Luna Aria." },
-      { property: "og:title", content: "Voices — Luna Aria" },
+      { title: "Voices — Testimonials of Tanusiya Choudhury" },
+      { name: "description", content: "What audiences, brands, and collaborators say about Tanusiya Choudhury's artistry and performances." },
+      { property: "og:title", content: "Voices — Tanusiya Choudhury" },
     ],
     links: [{ rel: "canonical", href: "/testimonials" }],
   }),
 });
 
 const quotes = [
-  { q: "Luna's voice doesn't ask for attention — it earns it. Within ten seconds, the room rearranged itself around her.", a: "Editorial Director, Maison Verre", r: "Brand" },
-  { q: "Working with Luna was the easiest brief we've ever shipped. She understood the campaign before we did.", a: "Creative Lead, Aurora Audio", r: "Brand" },
-  { q: "I cried at the bridge. I'm not even sure why. Just: thank you for that song.", a: "Aria, listener from Lisbon", r: "Fan" },
-  { q: "She brings the kind of presence you can't direct. You just press record and stay out of the way.", a: "Director, Velvet Hall", r: "Collab" },
-  { q: "Honest, prepared, generous. Three things I rarely get from a single artist.", a: "Tour Manager, North Strings", r: "Collab" },
-  { q: "Her covers got me through chemo. That's the truest sentence I've ever sent a stranger.", a: "Listener from Toronto", r: "Fan" },
-  { q: "Luna's audience converts because they trust her. The numbers were simply the proof.", a: "Performance Marketing, Soft Static", r: "Brand" },
-  { q: "First-take vocals. Of the song she'd never seen. We were stunned.", a: "Engineer, Studio 9", r: "Collab" },
+  { q: "Tanusiya's performances are a masterclass in vulnerability. The audience doesn't just watch — they feel.", a: "Event Curator, Mumbai Performing Arts", r: "Brand" },
+  { q: "Her ability to seamlessly blend dancing, singing, and guitar-playing in a single performance is rare. She's a complete artist.", a: "Music Producer, Echo Studios", r: "Collab" },
+  { q: "Watched her cover and had to sit down. The guitar work, the vocals, the authenticity. Absolute magic.", a: "Rahul, listener from Delhi", r: "Fan" },
+  { q: "She doesn't perform FOR the camera. She performs WITH the camera. That's what made our campaign so powerful.", a: "Creative Director, Velvet Fashion", r: "Brand" },
+  { q: "Tanusiya brings a professionalism that's rare for her age. Prepared, collaborative, authentic. A dream to work with.", a: "Festival Organizer, Indie Nights", r: "Collab" },
+  { q: "Your song helped me through my toughest year. The fact that you created it in your bedroom makes it even more special.", a: "Priya, listener from Bangalore", r: "Fan" },
+  { q: "The engagement rates on her content are phenomenal, but what's more important is the loyalty. Her audience trusts her completely.", a: "Digital Marketing, Zenith Brands", r: "Brand" },
+  { q: "Working with Tanusiya on our latest campaign was effortless. She understood our vision immediately and elevated it.", a: "Campaign Manager, Aurora Tech", r: "Collab" },
 ];
 
 function Testimonials() {

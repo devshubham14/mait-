@@ -18,9 +18,9 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
   head: () => ({
     meta: [
-      { title: "Gallery — Luna Aria" },
-      { name: "description", content: "Performances, backstage, studio and lifestyle imagery from the world of Luna Aria." },
-      { property: "og:title", content: "Gallery — Luna Aria" },
+      { title: "Gallery — Tanusiya Choudhury" },
+      { name: "description", content: "A cinematic gallery of performances, backstage moments, studio sessions, and lifestyle imagery from Tanusiya Choudhury's artistic journey." },
+      { property: "og:title", content: "Gallery — Tanusiya Choudhury" },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
   }),

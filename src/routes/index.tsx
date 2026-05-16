@@ -11,14 +11,20 @@ import portraitImg from "@/assets/portrait-2.jpg";
 import { Particles } from "@/components/site/Particles";
 import { Reveal } from "@/components/site/Reveal";
 import { PageTransition } from "@/components/site/PageTransition";
+import { CinematicTimeline } from "@/components/site/CinematicTimeline";
+import { CreatorStatistics } from "@/components/site/CreatorStatistics";
+import { SocialMediaSection } from "@/components/site/SocialMediaSection";
+import { ContactSection } from "@/components/site/ContactSection";
+import { NowPlayingWidget } from "@/components/site/NowPlayingWidget";
 
 export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Luna Aria — Every dream has a rhythm" },
-      { name: "description", content: "The cinematic homepage of Luna Aria, a singer, dancer and guitarist building a story one performance at a time." },
-      { property: "og:title", content: "Luna Aria — Every dream has a rhythm" },
+      { title: "Tanusiya Choudhury — Singer, Dancer, Creator" },
+      { name: "description", content: "Tanusiya Choudhury - Official artist portfolio. Singer, dancer, guitarist, and creator. State Level Orchestra Winner." },
+      { property: "og:title", content: "Tanusiya Choudhury — A Cinematic Creator Journey" },
+      { property: "og:description", content: "Turning emotions into melodies, movement, and memories." },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -28,11 +34,15 @@ function Home() {
   return (
     <PageTransition>
       <Hero />
-      <Intro />
+      <NowPlayingWidget />
       <FeaturedMoments />
+      <CinematicTimeline />
+      <CreatorStatistics />
       <Growth />
       <CinematicQuote />
       <Reels />
+      <SocialMediaSection />
+      <ContactSection />
       <CTA />
     </PageTransition>
   );
@@ -50,7 +60,7 @@ function Hero() {
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Luna Aria on stage"
+          alt="Tanusiya Choudhury on stage"
           width={1536}
           height={1920}
           className="h-full w-full object-cover"
@@ -63,69 +73,76 @@ function Hero() {
 
       <motion.div
         style={{ opacity }}
-        className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-24 pt-32 md:justify-center"
+        className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:pb-24 md:pt-32 md:justify-center"
       >
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] backdrop-blur-md"
+          className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[9px] uppercase tracking-[0.15em] backdrop-blur-md sm:mb-4 sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.2em] md:mb-6 md:px-4 md:py-2 md:text-xs md:tracking-[0.3em]"
         >
-          <Sparkles size={12} className="text-primary" />
-          A cinematic portfolio
+          <Sparkles size={8} className="text-primary sm:size-3 md:size-3" />
+          Premium artist portfolio
         </motion.p>
-        <h1 className="font-display text-[12vw] leading-[0.9] tracking-tight md:text-[7.5rem] lg:text-[9rem]">
-          {"Every dream".split(" ").map((w, i) => (
+        <h1 className="font-display text-4xl leading-[0.95] tracking-tight sm:text-6xl md:text-[7.5rem] lg:text-[9rem]">
+          {"TANUSIYA".split(" ").map((w, i) => (
             <motion.span
               key={i}
-              initial={{ opacity: 0, y: 80 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, delay: 0.3 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="mr-4 inline-block"
+              className="mr-1 inline-block sm:mr-2 md:mr-4"
             >
               {w}
             </motion.span>
           ))}
           <br />
           <motion.span
-            initial={{ opacity: 0, y: 80 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="font-serif italic text-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
           >
-            has a rhythm.
+            CHOUDHURY
           </motion.span>
         </h1>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-8 max-w-xl text-balance text-base leading-relaxed text-muted-foreground md:text-lg"
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mt-2.5 inline-flex w-fit items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[8px] uppercase tracking-[0.1em] backdrop-blur-md sm:mt-3 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-[9px] md:mt-6 md:gap-3 md:px-5 md:py-2 md:text-xs md:tracking-[0.2em]"
         >
-          From silent beginnings to unforgettable stages — this is the story of a girl
-          who turned her heartbeat into a melody.
+          Singer • Dancer • Guitarist • Creator
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="mt-4 max-w-xl text-balance font-serif text-xs italic leading-relaxed text-muted-foreground sm:text-sm md:mt-8 md:text-base lg:text-xl"
+        >
+          "Turning emotions into melodies, movement, and memories."
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="mt-10 flex flex-wrap gap-3"
+          className="mt-4 flex flex-col gap-2 sm:mt-5 sm:flex-row sm:flex-wrap sm:gap-2.5 md:mt-10 md:gap-3"
         >
           <Link
             to="/journey"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_0_40px_-5px_var(--glow)] transition hover:shadow-[0_0_60px_-5px_var(--glow-pink)]"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-xs sm:text-xs md:text-sm font-medium text-primary-foreground shadow-[0_0_40px_-5px_var(--glow)] transition hover:shadow-[0_0_60px_-5px_var(--glow-pink)] text-center"
           >
             Explore Journey →
           </Link>
           <Link
             to="/talents"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm backdrop-blur-md transition hover:border-primary/50 hover:bg-white/10"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-xs sm:text-xs md:text-sm backdrop-blur-md transition hover:border-primary/50 hover:bg-white/10"
           >
-            <Play size={14} /> Watch Moments
+            <Play size={10} className="sm:size-3 md:size-4" /> Watch Moments
           </Link>
           <Link
             to="/contact"
-            className="rounded-full border border-white/10 px-7 py-3.5 text-sm text-muted-foreground transition hover:border-white/30 hover:text-foreground"
+            className="rounded-full border border-white/10 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-xs sm:text-xs md:text-sm text-muted-foreground transition hover:border-white/30 hover:text-foreground text-center"
           >
             Work With Me
           </Link>
@@ -151,80 +168,36 @@ function Hero() {
   );
 }
 
-function Intro() {
-  const roles = [
-    { t: "Singer", img: singImg, line: "Voice as a confession." },
-    { t: "Dancer", img: danceImg, line: "Body as a brushstroke." },
-    { t: "Guitarist", img: guitarImg, line: "Strings as a heartbeat." },
-    { t: "Performer", img: stageImg, line: "Stage as a sanctuary." },
-    { t: "Creator", img: portraitImg, line: "Lens as a diary." },
-    { t: "Artist", img: heroImg, line: "Life as the canvas." },
-  ];
-  return (
-    <section className="relative px-6 py-32 md:py-44">
-      <div className="mx-auto max-w-7xl">
-        <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">— Introduction</p>
-          <h2 className="mt-4 max-w-4xl font-display text-5xl leading-[1.05] tracking-tight md:text-7xl">
-            Six worlds.{" "}
-            <span className="font-serif italic text-muted-foreground/80">One story.</span>
-          </h2>
-        </Reveal>
-        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {roles.map((r, i) => (
-            <Reveal key={r.t} delay={i * 0.07}>
-              <article className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5">
-                <img
-                  src={r.img}
-                  alt={r.t}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-accent/0 transition-opacity duration-700 group-hover:from-primary/10 group-hover:to-accent/20" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="text-xs uppercase tracking-[0.3em] text-primary/80">0{i + 1}</p>
-                  <h3 className="mt-2 font-display text-3xl tracking-tight">{r.t}</h3>
-                  <p className="mt-1 font-serif text-sm italic text-muted-foreground">{r.line}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function FeaturedMoments() {
   const moments = [
-    { y: "2023", t: "First viral moment", d: "A guitar cover that reached 2M hearts overnight.", img: guitarImg },
-    { y: "2024", t: "Sold-out showcase", d: "Performed live to a full crowd at The Velvet Hall.", img: stageImg },
-    { y: "2025", t: "First brand campaign", d: "Featured artist for a global fashion house.", img: portraitImg },
+    { y: "2020", t: "State Orchestra Winner", d: "Achieved state level recognition in classical music.", img: guitarImg },
+    { y: "2023", t: "Creator Journey Begins", d: "Started sharing performances across social platforms.", img: stageImg },
+    { y: "2025", t: "Brand Collaborations", d: "Partnering with beauty, fashion and lifestyle brands.", img: portraitImg },
   ];
   return (
-    <section className="relative px-6 py-32">
+    <section className="relative px-4 py-20 sm:px-6 sm:py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <div className="flex items-end justify-between gap-6">
-            <h2 className="max-w-3xl font-display text-5xl leading-[1.05] tracking-tight md:text-6xl">
-              Moments that <span className="font-serif italic">shaped</span> the story.
+          <div className="flex flex-col gap-4 items-start justify-between sm:flex-row sm:items-end sm:gap-6">
+            <h2 className="max-w-3xl font-display text-3xl sm:text-4xl leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+              Milestones that <span className="font-serif italic">matter.</span>
             </h2>
-            <Link to="/journey" className="hidden whitespace-nowrap text-sm text-muted-foreground hover:text-foreground md:block">
-              View timeline →
+            <Link to="/journey" className="hidden whitespace-nowrap text-xs sm:text-sm text-muted-foreground hover:text-foreground md:block">
+              Full timeline →
             </Link>
           </div>
         </Reveal>
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-12 md:mt-16 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {moments.map((m, i) => (
             <Reveal key={m.t} delay={i * 0.1}>
-              <article className="group glass relative overflow-hidden rounded-3xl p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_80px_-20px_var(--glow)]">
-                <div className="aspect-video overflow-hidden rounded-xl">
+              <article className="group glass relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_80px_-20px_var(--glow)]">
+                <div className="aspect-video overflow-hidden rounded-lg sm:rounded-xl">
                   <img src={m.img} alt={m.t} loading="lazy" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 </div>
-                <p className="mt-6 font-serif text-sm italic text-primary">{m.y}</p>
-                <h3 className="mt-1 font-display text-2xl tracking-tight">{m.t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{m.d}</p>
+                <p className="mt-3 sm:mt-6 font-serif text-xs sm:text-sm italic text-primary">{m.y}</p>
+                <h3 className="mt-1 font-display text-lg sm:text-2xl tracking-tight">{m.t}</h3>
+                <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-muted-foreground">{m.d}</p>
               </article>
             </Reveal>
           ))}
@@ -236,29 +209,29 @@ function FeaturedMoments() {
 
 function Growth() {
   const stats = [
-    { n: "1.2M+", l: "Followers" },
-    { n: "48M", l: "Monthly reach" },
-    { n: "120+", l: "Performances" },
-    { n: "27", l: "Brand collabs" },
+    { n: "700+", l: "Instagram Followers" },
+    { n: "220+", l: "YouTube Subscribers" },
+    { n: "80+", l: "Videos Created" },
+    { n: "1x", l: "State Orchestra Winner" },
   ];
   return (
-    <section className="relative px-6 py-32">
+    <section className="relative px-4 py-20 sm:px-6 sm:py-24 md:py-32 overflow-hidden">
       <div className="ambient-glow pointer-events-none absolute inset-0 opacity-40" />
       <div className="relative mx-auto max-w-7xl">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">— Growth</p>
-          <h2 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] tracking-tight md:text-6xl">
-            An audience built on <span className="font-serif italic">honesty.</span>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">— By The Numbers</p>
+          <h2 className="mt-4 max-w-3xl font-display text-3xl sm:text-4xl leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+            Growing through <span className="font-serif italic">authentic connection.</span>
           </h2>
         </Reveal>
-        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-12 md:mt-16 grid gap-px overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.08}>
-              <div className="bg-background/80 p-10">
-                <p className="bg-gradient-to-br from-primary via-accent to-primary bg-clip-text font-display text-5xl text-transparent md:text-6xl">
+              <div className="bg-background/80 p-4 sm:p-6 md:p-10">
+                <p className="bg-gradient-to-br from-primary via-accent to-primary bg-clip-text font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-transparent">
                   {s.n}
                 </p>
-                <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">{s.l}</p>
+                <p className="mt-2 sm:mt-3 text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground">{s.l}</p>
               </div>
             </Reveal>
           ))}
@@ -270,20 +243,20 @@ function Growth() {
 
 function CinematicQuote() {
   return (
-    <section className="relative px-6 py-44">
+    <section className="relative px-4 py-20 sm:px-6 sm:py-32 md:py-44 overflow-hidden">
       <div className="ambient-glow pointer-events-none absolute inset-0 opacity-60" />
       <Reveal>
         <blockquote className="relative mx-auto max-w-5xl text-center">
-          <p className="font-serif text-4xl italic leading-[1.1] tracking-tight text-foreground md:text-7xl lg:text-8xl">
-            "I don't perform.
-            <br />I let the silence
+          <p className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-7xl italic leading-[1.1] tracking-tight text-foreground">
+            "I don't just perform.
+            <br />I
             <br />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              speak through me.
+              create moments that linger.
             </span>"
           </p>
-          <p className="mt-10 text-xs uppercase tracking-[0.4em] text-muted-foreground">
-            — Luna Aria
+          <p className="mt-6 sm:mt-8 md:mt-10 text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground">
+            — Tanusiya Choudhury
           </p>
         </blockquote>
       </Reveal>
@@ -294,23 +267,23 @@ function CinematicQuote() {
 function Reels() {
   const reels = [danceImg, singImg, guitarImg, stageImg, backstageOrPortrait(), portraitImg];
   return (
-    <section className="relative px-6 py-32">
+    <section className="relative px-4 py-20 sm:px-6 sm:py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <div className="flex items-end justify-between">
-            <h2 className="font-display text-5xl tracking-tight md:text-6xl">Featured reels</h2>
-            <p className="text-sm text-muted-foreground">Hover to feel</p>
+          <div className="flex flex-col gap-2 items-start justify-between sm:flex-row sm:items-end sm:gap-4">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">Featured reels</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground">Hover to feel</p>
           </div>
         </Reveal>
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-6">
           {reels.map((src, i) => (
             <Reveal key={i} delay={i * 0.05}>
-              <div className="group relative aspect-[9/16] overflow-hidden rounded-2xl">
+              <div className="group relative aspect-[9/16] overflow-hidden rounded-xl sm:rounded-2xl">
                 <img src={src} alt="" loading="lazy" className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-background/40 transition-opacity group-hover:bg-background/10" />
                 <div className="absolute inset-0 grid place-items-center opacity-0 transition-opacity group-hover:opacity-100">
-                  <div className="grid h-12 w-12 place-items-center rounded-full bg-white/20 backdrop-blur-md">
-                    <Play size={16} fill="currentColor" />
+                  <div className="grid h-10 sm:h-12 w-10 sm:w-12 place-items-center rounded-full bg-white/20 backdrop-blur-md">
+                    <Play size={14} fill="currentColor" className="sm:w-4 sm:h-4" />
                   </div>
                 </div>
               </div>
@@ -325,21 +298,21 @@ function backstageOrPortrait() { return portraitImg; }
 
 function CTA() {
   return (
-    <section className="relative px-6 py-32">
+    <section className="relative px-4 py-20 sm:px-6 sm:py-24 md:py-32 overflow-hidden">
       <Reveal>
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-card via-background to-card p-12 text-center md:p-20">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-card via-background to-card p-6 sm:p-10 md:p-20 text-center">
           <div className="ambient-glow pointer-events-none absolute inset-0 opacity-50" />
           <div className="relative">
-            <p className="text-xs uppercase tracking-[0.4em] text-primary">Collaborations</p>
-            <h2 className="mt-6 font-display text-5xl leading-[1] tracking-tight md:text-7xl">
-              Bring your brand into <span className="font-serif italic">the frame.</span>
+            <p className="text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-primary">Let's Collaborate</p>
+            <h2 className="mt-4 sm:mt-6 font-display text-2xl sm:text-3xl md:text-5xl lg:text-7xl leading-[1] tracking-tight">
+              Bring your vision to <span className="font-serif italic">the frame.</span>
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-              I partner with brands who believe in storytelling that lingers.
+            <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-xs sm:text-base text-muted-foreground">
+              I partner with brands and creators who believe in storytelling that touches hearts and minds.
             </p>
             <Link
               to="/contact"
-              className="mt-10 inline-flex rounded-full bg-gradient-to-r from-primary to-accent px-8 py-4 text-sm font-medium text-primary-foreground shadow-[0_0_60px_-10px_var(--glow)]"
+              className="mt-6 sm:mt-8 md:mt-10 inline-flex rounded-full bg-gradient-to-r from-primary to-accent px-5 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-4 text-xs sm:text-sm font-medium text-primary-foreground shadow-[0_0_60px_-10px_var(--glow)]"
             >
               Start the conversation →
             </Link>

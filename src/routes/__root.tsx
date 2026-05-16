@@ -14,6 +14,8 @@ import { Footer } from "@/components/site/Footer";
 import { FilmGrain } from "@/components/site/FilmGrain";
 import { CursorGlow } from "@/components/site/CursorGlow";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
+import { CinematicLoader } from "@/components/site/CinematicLoader";
+import { PremiumFooter } from "@/components/site/PremiumFooter";
 
 function NotFoundComponent() {
   return (
@@ -56,16 +58,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Luna Aria — Singer, Dancer, Storyteller" },
+      { title: "Tanusiya Choudhury — Singer, Dancer, Creator" },
       {
         name: "description",
         content:
-          "The cinematic personal world of Luna Aria — a singer, dancer, guitarist and creator turning every moment into rhythm.",
+          "Tanusiya Choudhury - Official artist portfolio. Singer, dancer, guitarist, performer, and content creator. State Level Orchestra Winner.",
       },
-      { property: "og:title", content: "Luna Aria — A cinematic creator portfolio" },
-      { property: "og:description", content: "From silent beginnings to unforgettable stages." },
+      { property: "og:title", content: "Tanusiya Choudhury — Premium Artist Portfolio" },
+      { property: "og:description", content: "Turning emotions into melodies, movement, and memories." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Luna Aria" },
+      { property: "og:site_name", content: "Tanusiya Choudhury" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0a0712" },
     ],
@@ -96,9 +98,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
             --font-sans: "Inter", system-ui, sans-serif;
             --font-serif: "Instrument Serif", "Cormorant Garamond", serif;
           }
+          html, body {
+            overflow-x: hidden;
+            width: 100%;
+          }
         `}</style>
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         {children}
         <Scripts />
       </body>
@@ -110,12 +116,13 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <CinematicLoader />
       <SmoothScroll />
       <CursorGlow />
       <FilmGrain />
       <Nav />
       <Outlet />
-      <Footer />
+      <PremiumFooter />
     </QueryClientProvider>
   );
 }

@@ -8,21 +8,21 @@ export const Route = createFileRoute("/collaborations")({
   component: Collabs,
   head: () => ({
     meta: [
-      { title: "Collaborations — Luna Aria" },
-      { name: "description", content: "Brand collaborations, audience analytics and the media kit of creator and performer Luna Aria." },
-      { property: "og:title", content: "Work with Luna Aria" },
+      { title: "Collaborations & Media Kit — Tanusiya Choudhury" },
+      { name: "description", content: "Brand collaborations, audience analytics, and the media kit for creator and performer Tanusiya Choudhury." },
+      { property: "og:title", content: "Work with Tanusiya Choudhury" },
     ],
     links: [{ rel: "canonical", href: "/collaborations" }],
   }),
 });
 
 const brands = [
-  { n: "Maison Verre", c: "Fashion campaign" },
-  { n: "Aurora Audio", c: "Acoustic series" },
-  { n: "Soft Static", c: "Limited capsule" },
-  { n: "Neue Mode", c: "Cover film" },
-  { n: "Velvet Hall", c: "Artist residency" },
-  { n: "North Strings", c: "Signature guitar" },
+  { n: "Velvet Fashion", c: "Seasonal campaign" },
+  { n: "Echo Studios", c: "Music production" },
+  { n: "Zenith Tech", c: "Brand ambassador" },
+  { n: "Aurora Acoustics", c: "Product feature" },
+  { n: "Indie Nights Festival", c: "Performer" },
+  { n: "Muse Records", c: "Artist partnership" },
 ];
 
 const demographics = [
@@ -45,7 +45,7 @@ function Collabs() {
       <section className="relative px-6 pb-16 pt-40 md:pt-52">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-primary">Press / Brands</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-primary">For Brands & Partners</p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-6 font-display text-6xl leading-[0.95] tracking-tight md:text-[8rem]">
@@ -54,8 +54,8 @@ function Collabs() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-              A growing community of creative, fashion-forward listeners who lean in.
-              Below — the campaigns, the numbers, the why.
+              A growing community of creative, discerning listeners who connect deeply with authentic artistry.
+              Below — the brands we've partnered with, the metrics, and what makes collaboration special.
             </p>
           </Reveal>
         </div>
@@ -150,7 +150,7 @@ function Collabs() {
               <h2 className="mt-4 font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
                 The full deck. <span className="font-serif italic">One PDF.</span>
               </h2>
-              <p className="mt-4 max-w-md text-muted-foreground">Rates, reach, case studies, and the kind of details brand managers love.</p>
+              <p className="mt-4 max-w-md text-muted-foreground">Collaboration rates, audience analytics, case studies, and everything you need to know about partnering with Tanusiya.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="#" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-medium text-primary-foreground">
                   <Download size={14} /> Download media kit
